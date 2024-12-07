@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'ecopontos.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +37,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            
             ListTile(
               leading: Icon(Icons.login),
               title: Text("Login"),
@@ -53,6 +58,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,7 +140,9 @@ class _HomePageState extends State<HomePage> {
                     alignment: Alignment
                         .bottomRight, // Garante o alinhamento do botão no fim
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => EcoPage(),),);
+                      },
                       child: Text("Buscar"),
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
