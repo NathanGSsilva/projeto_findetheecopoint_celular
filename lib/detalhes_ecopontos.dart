@@ -12,7 +12,7 @@ class DetalhesEcopontosState extends State<DetalhesEcopontos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detalhes"),
+        title: const Text("Detalhes"),
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
